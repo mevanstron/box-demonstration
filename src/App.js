@@ -1,31 +1,29 @@
 import React, { Component } from 'react';
+import boxClient from './components/BoxClient';
 import './App.css';
 
 
 
-class App extends Component {
+import { ContentExplorer } from 'box-ui-elements';
+import messages from 'box-ui-elements/i18n/en-US';
+import 'box-ui-elements/dist/explorer.css';
 
-  boxClient = () => {
-    const BoxSDK = require('box-node-sdk');
-    // Create new Box SDK instance
-    const sdk = new BoxSDK({
-      clientID: 'm1pqiy0vuuhz0ybejni75yf77664lplu',
-      clientSecret: 'MLXjmrDiwq4dPb6JlQpnokg0JhuGxNxK'
-    });
-    // Create new basic client with developer token
-    const client = sdk.getBasicClient('J7xXXQtpcgvSCPawrvDvDvxdWCOMhP7j');
-    return client;
-  }
+
+
+
+class App extends Component {
   componentDidMount() {
-    this.boxClient().folders.get('/0')
+    boxClient().folders.get('/0')
 	    .then(data => data.item_collection.entries)
       .then(items => console.log(items));
   }
   render() {
     return (
-      <div>
-        {}
-      </div>
+      <ContentExplorer
+          token='6he0Kaibh4Bz6n8T9JNRu0b3lHIHfn9q'
+          language='en-US'
+          messages={messages}
+      />
     );
   }
 }
