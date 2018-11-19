@@ -6,7 +6,7 @@ const boxClient = props => {
     clientSecret: 'MLXjmrDiwq4dPb6JlQpnokg0JhuGxNxK'
   });
   // Create new basic client with developer token
-  const token = '6he0Kaibh4Bz6n8T9JNRu0b3lHIHfn9q'
+  const token = 'aSnrJICufugjNhHpJONFxQ3CUUsjHgcl'
   const client = sdk.getBasicClient(token);
   return client;
 }
